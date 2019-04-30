@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<!--<html lang="en-US">-->
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />-->
+    <title>Orion</title>
+    <meta name="description" content="" />
+    <!-- Mobile Specifics -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="320" />
+    <link rel="icon" type="image/png" href="_include/imgs/fav/favicon.png" />
+    <link rel="stylesheet" href="_include/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="_include/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+</head>
+
+<body class="home">
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-dark">
+            <a class="navbar-brand" href="/">
+                <img src="_include/imgs/orion-logo2.png" alt="logo">
+            </a>
+        </nav>
+    </header>
+    <div class="first_section sections">
+        <div class="container">
+            <div class="title">
+                <h1>
+                    Worker Deposit
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form">
+                        <div class="title">
+                            <h4 class="before">Step 1: Search your ledger</h4>
+                            <h4 class="after">Ledger Info</h4>
+                        </div>
+                        <div class="inputs before">
+                            <div class="input">
+                                <input type="text" id="apiUrl" value="" placeholder="Ledger URL">
+                            </div>
+                            <div class="input">
+                                <input type="text" id="rpcProviderUrl" value="" placeholder="Node URL">
+                            </div>
+                        </div>
+                        <div class="details after">
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Ledger API URL
+                                </div>
+                                <div class="value col-md-7" id="loadedLedgerApiUrl">
+                                </div>
+                            </div>
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Ledger RPC URL
+                                </div>
+                                <div class="value col-md-7" id="loadedLedgerRpcUrl">
+                                </div>
+                            </div>
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Deposit Contract
+                                </div>
+                                <div class="value col-md-7" id="loadedDepositContract">
+                                </div>
+                            </div>
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Ledger Manager Contract
+                                </div>
+                                <div class="value col-md-7" id="loadedManagerContract">
+                                </div>
+                            </div>
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Group Worker Credit Contract
+                                </div>
+                                <div class="value col-md-7" id="loadedWorkerCreditContract">
+                                </div>
+                            </div>
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Current Workers Queue Size
+                                </div>
+                                <div class="value col-md-7" id="currentWorkerCount">
+                                </div>
+                            </div>
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Current Task Queue Size
+                                </div>
+                                <div class="value col-md-7" id="currentTaskCount">
+                                </div>
+                            </div>
+                            <div class="detail row">
+                                <div class="col-md-5 title">
+                                    Current Active Task Count
+                                </div>
+                                <div class="value col-md-7" id="currentActiveCount">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom row">
+                            <div class="col-md-8 status before" id="ledgerStatus">
+                                <span>Not connected</span>
+                            </div>
+                            <div class="col-md-4 button text-right">
+                                <button onclick="loadLedger()" class="before">Load Ledger</button>
+                                <button onclick="back()" class="after">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-section sections">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form">
+                        <div class="title">
+                            <h4>Step 2: Import your wallet</h4>
+                        </div>
+                        <div class="inputs">
+                            <div class="input">
+                                <input type="text" id="wallet" value="" placeholder="wallet address">
+                            </div>
+                            <div class="input">
+                                <input type="text" id="pk" value="" placeholder="private key">
+                            </div>
+                            <!-- <div class="note">
+                                note: add <span class = "red">'0x'</span> to private key exported from metamask
+                            </div> -->
+                        </div>
+                        <div class="bottom row">
+                            <div class="col-md-8 status" id="walletLoaded">
+                                <span>No Wallet Loaded</span>
+                            </div>
+                            <div class="col-md-4 button text-right">
+                                <button onclick="loadWallet()">Load Wallet</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="third-section sections">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form">
+                        <div class="title">
+                            <h4>Step 3: Worker Credit Deposit</h4>
+                        </div>
+                        <div class="inputs">
+                            <div class="input-group row">
+                                <div class="input col-md-8">
+                                    <input type="text" id="workerId" value="" placeholder="Worker ID">
+                                </div>
+                                <div class="button col-md-4">
+                                    <button onclick="getWorkerCredit()">Load Worker</button>
+                                </div>
+                                <div class="col-md-8 status" id="workerCredit">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="input-group row">
+                                <div class="input col-md-8">
+                                    <input type="text" id="workerCreditAmount" value="" placeholder="Deposit Amount (NBAI)">
+                                </div>
+                                <div class="button col-md-4">
+                                    <button onclick="depositWorkerCredit()">Deposit</button>
+                                </div>
+                                <div class="col-md-8 status" id="depositStatus">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom row">
+                            <div class="col-md-6 status">
+<!--
+                                <span>Estimated Hour Rate: 2000NBAI/hr</span>
+-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-md-3 right-side">
+                    <div id="eligibility">Not Eligible</div>
+<!--                   
+                    <div id="estimate"></div>
+-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="_include/js/jquery-3.3.1.min.js"></script>
+    <script src="_include/js/jquery-ui.min.js"></script>
+    <!-- <script src="_include/js/jquery.waypoints.min.js"></script> -->
+    <script src="_include/js/bootstrap.min.js"></script>
+    <script src="_include/js/web3.js"></script>
+    <script src="_include/js/wallet.js"></script>
+    <script src="_include/js/nbai.js"></script>
+    <script src="_include/js/index.js"></script>
+    <!-- <script src="_include/js/main.js"></script> -->
+    <!-- <script src="_include/js/canvas.js"></script> -->
+</body>

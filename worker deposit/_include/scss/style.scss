@@ -1,0 +1,133 @@
+@font-face {
+    font-family: light;
+    src: url(../fonts/HelveticaNeueLTStd-Lt.otf);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(../fonts/HelveticaNeueLTStd-Roman.otf)
+}
+
+@font-face {
+    font-family: medi;
+    src: url(../fonts/HelveticaNeueLTStd-Md.otf)
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 980px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1366px,
+);
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+
+$grid-columns: 16 !default;
+$dark-blue: #0041c4;
+$middle-blue: #5c9bff;
+$light-blue: #8db9ff;
+$black: #161616;
+$grey: #f7f7f7;
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto, .col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12, .col-xxl, .col-xxl-auto{
+    padding: 0;
+}
+
+.row{
+    margin: 0;
+}
+
+body {
+    font-family: regular;
+    font-size: 14px;
+    color: $black;
+    background: url('../imgs/background.png') no-repeat top right;
+    background-size: contain;
+    @media(max-width: 1024px){
+        background-size: 60%;
+    }
+    header{
+        width: 90%;
+        max-width: 1440px;
+        margin: auto;
+    }
+    h1{
+        margin: 2rem 0;
+    }
+    // background-size: 60%;
+    .sections{
+        margin: 4rem 0;
+        .container{
+            width: 90%;
+            max-width: 1440px;
+            margin: auto;
+            .after{
+                display: none;
+            }
+            button{
+                background: $middle-blue;
+                border: none;
+                padding: 5px 20px;
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                height: 2.5rem;
+                cursor: pointer;
+            }
+            input{
+                height: 2.5rem;
+                width: 100%;
+                margin: 0.5rem 0;
+                padding-left: 1rem;
+            }
+            .status{
+                span{
+                    color: $middle-blue;
+                    position: relative;
+                    top: 0.5rem;
+                }
+            }
+            .input-group{
+                .button{
+                    button{
+                        margin: 0.5rem 0;
+                    }
+                }
+            }
+            .bottom {
+                margin: 1rem 0;
+            }
+            .note{
+                margin: 1rem 0;
+            }
+        }
+        .right-side{
+            position: relative;
+            top: 3.5rem;
+            left: 1.5rem;
+        }
+        #eligibility{
+            color: red;
+        }
+        #estimate{
+            color: $middle-blue;
+            padding-top: 3rem;
+        }
+        #workerCredit {
+            padding-bottom: 1rem;
+        }
+    }
+}

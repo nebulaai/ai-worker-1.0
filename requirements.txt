@@ -1,6 +1,6 @@
 absl-py==0.2.2
-Pillow==3.1.2
-urllib3==1.22
+Pillow==6.0.0
+urllib3==1.25.2
 w3lib==1.19.0
 eth-abi==1.2.0
 eth-account==0.2.3
@@ -22,8 +22,8 @@ Keras==2.1.6
 psutil==5.4.6
 py-cpuinfo==4.0.0
 python-magic==0.4.15
-PyYAML==3.12
-requests==2.18.4
+PyYAML==5.1
+requests==2.21.0
 requests-toolbelt==0.8.0
 virtualenv==15.1.0
 wget==3.2

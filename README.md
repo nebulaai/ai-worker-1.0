@@ -66,7 +66,7 @@ $ docker pull nbaicloudplatform/tf1.8_torch_cuda9:latest
 $ python3 manager.py
  ```
  
-2. Enter ledger node url, NBAI wallet address and ledger url ([ledger list](https://orioncloud.io/dashboard/#/worker/general)).
+2. Enter ledger node url, NBAI wallet address and ledger url ([ledger list](https://nbai.io/dashboard/#/worker/general)).
 
 A benchmark test will be executed on your machine. You will see your benchmark score in terminal prompt.
 
@@ -121,7 +121,7 @@ You are all set! The following message on your terminal showed that you have joi
 
 ## Getting help
 
-For questions, issues regarding ai worker, please submit [email requests](https://orioncloud.io/contact.html).
+For questions, issues regarding ai worker, please submit [email requests](https://nbai.io/contact.html).
 
 ## Licence
 

@@ -9,7 +9,8 @@
 
 # [Nebula AI Worker](https://github.com/nebulaai/ai-worker)
 
-Official Orion AI worker software release.
+## AI worker V1
+Official Orion AI worker V1 software release, and [AI worker V2](https://github.com/nebulaai/ai-worker) has been released which is recommended.
 
 ## What is AI worker
 
